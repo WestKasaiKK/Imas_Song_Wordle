@@ -8,8 +8,6 @@
 </head>
 <body>
 <h1 class="title"> アイマス楽曲Wordle -Japanese Version-</h1>
-<p><font size="1">※初めての方へ：本ゲームは作りかけです。遊ぶことはできますが色々と不便な点・融通の利かない点・誤っている点などがありますのでご了承ください。</font></p>
-<p><font size="1">【最終更新：メモリーブロッサム追加】</font></p>
 <object id="songdata" data="songdata_JP.txt" type="text/plain" style="display:none"></object>
 <p id="g">
   <button type="button" id="g0" onclick="startClick()">GAME START</button>
@@ -307,6 +305,8 @@
 </p>
 
 <p id="wrongtext">　</p>
+<p><font size="1">※初めての方へ：本ゲームは作りかけです。遊ぶことはできますが色々と不便な点・融通の利かない点・誤っている点などがありますのでご了承ください。</font></p>
+<p><font size="1">【最終更新：メモリーブロッサム追加】</font></p>
 <font size="1"><div class="box">
   <p id="ansedtext"></p>
 </div></font>
@@ -344,9 +344,18 @@ fetch('songdata_JP.txt')
   .then(function (mass) {
     var datas=mass.split("\n")
     var j=0;
-    for (let i=0;i<datas.length;i++){
+    for (let i=0;i<datas.length;i=i+3){
+      d1=datas[i]
+      d2=datas[i+1]
+      d3=datas[i+2]
+      if (len(d2)<=limit){
+        songlistN.push(d1)
+        songlistH.push(d2)
+        infolist.push(d3)
+      }
+
       if (i%3==0){
-        songlistN.push(datas[i])
+        
       }else if(i%3==1){
         songlistH.push(datas[i])
       }else{
@@ -540,6 +549,7 @@ if (kaitoutext!="" && ingame==true){
     stage++;
     var obj=document.getElementById("l"+String(stage));
     obj.style.display="block";
+    wrongtext.innerText="";
   }else{
     ingame=false;
     var obj=document.getElementById("anstext");
@@ -547,6 +557,9 @@ if (kaitoutext!="" && ingame==true){
     obj.style.display="block";
     var obj=document.getElementById("infotext");
     obj.textContent=songlistH[ansnumber];
+    obj.style.display="block";
+    var obj=document.getElementById("infotext2");
+    obj.textContent=infolist[ansnumber];
     obj.style.display="block";
     var obj=document.getElementById("g");
     obj.style.display="block";
