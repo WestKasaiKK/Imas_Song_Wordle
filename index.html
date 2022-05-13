@@ -3,1324 +3,570 @@
 <head>
 <meta charset="UTF-8">
 <link href="style.css" rel="stylesheet">
+<link href="songdata_JP.txt" id="data">
 <title>test</title>
 </head>
 <body>
-<h1 class="title"> アイマス楽曲言えるかな？Ultimate</h1>
-<p id="titletext"> </p>
+<h1 class="title"> アイマス楽曲Wordle -Japanese Version-</h1>
 <p><font size="1">※初めての方へ：本ゲームは作りかけです。遊ぶことはできますが色々と不便な点・融通の利かない点・誤っている点などがありますのでご了承ください。</font></p>
-<p><font size="1">【最終更新：2021/11/4 同日のミリラジで発表された2曲を追加 1238→1240】</font></p>
-<p>
-<label>曲名：<input type="text" id="nameText"></label>
-<input type="button" value="Check" id="checkButton">
+<p><font size="1">【最終更新：メモリーブロッサム追加】</font></p>
+<object id="songdata" data="songdata_JP.txt" type="text/plain" style="display:none"></object>
+<p id="g">
+  <button type="button" id="g0" onclick="startClick()">GAME START</button>
 </p>
+<p id="l0">
+  <button type="button" id="a0">　</button>
+  <button type="button" id="a1">　</button>
+  <button type="button" id="a2">　</button>
+  <button type="button" id="a3">　</button>
+  <button type="button" id="a4">　</button>
+  <button type="button" id="a5">　</button>
+  <button type="button" id="a6">　</button>
+  <button type="button" id="a7">　</button>
+  <button type="button" id="a8">　</button>
+  <button type="button" id="a9">　</button>
+  <button type="button" id="a10">　</button>
+  <button type="button" id="a11">　</button>
+  <button type="button" id="a12">　</button>
+  <button type="button" id="a13">　</button>
+  <button type="button" id="a14">　</button>
+  <button type="button" id="a15">　</button>
+</p>
+<p id="l1">
+  <button type="button" id="a100">　</button>
+  <button type="button" id="a101">　</button>
+  <button type="button" id="a102">　</button>
+  <button type="button" id="a103">　</button>
+  <button type="button" id="a104">　</button>
+  <button type="button" id="a105">　</button>
+  <button type="button" id="a106">　</button>
+  <button type="button" id="a107">　</button>
+  <button type="button" id="a108">　</button>
+  <button type="button" id="a109">　</button>
+  <button type="button" id="a110">　</button>
+  <button type="button" id="a111">　</button>
+  <button type="button" id="a112">　</button>
+  <button type="button" id="a113">　</button>
+  <button type="button" id="a114">　</button>
+  <button type="button" id="a115">　</button>
+</p>
+<p id="l2">
+  <button type="button" id="a200">　</button>
+  <button type="button" id="a201">　</button>
+  <button type="button" id="a202">　</button>
+  <button type="button" id="a203">　</button>
+  <button type="button" id="a204">　</button>
+  <button type="button" id="a205">　</button>
+  <button type="button" id="a206">　</button>
+  <button type="button" id="a207">　</button>
+  <button type="button" id="a208">　</button>
+  <button type="button" id="a209">　</button>
+  <button type="button" id="a210">　</button>
+  <button type="button" id="a211">　</button>
+  <button type="button" id="a212">　</button>
+  <button type="button" id="a213">　</button>
+  <button type="button" id="a214">　</button>
+  <button type="button" id="a215">　</button>
+</p>
+<p id="l3">
+  <button type="button" id="a300">　</button>
+  <button type="button" id="a301">　</button>
+  <button type="button" id="a302">　</button>
+  <button type="button" id="a303">　</button>
+  <button type="button" id="a304">　</button>
+  <button type="button" id="a305">　</button>
+  <button type="button" id="a306">　</button>
+  <button type="button" id="a307">　</button>
+  <button type="button" id="a308">　</button>
+  <button type="button" id="a309">　</button>
+  <button type="button" id="a310">　</button>
+  <button type="button" id="a311">　</button>
+  <button type="button" id="a312">　</button>
+  <button type="button" id="a313">　</button>
+  <button type="button" id="a314">　</button>
+  <button type="button" id="a315">　</button>
+</p>
+<p id="l4">
+  <button type="button" id="a400">　</button>
+  <button type="button" id="a401">　</button>
+  <button type="button" id="a402">　</button>
+  <button type="button" id="a403">　</button>
+  <button type="button" id="a404">　</button>
+  <button type="button" id="a405">　</button>
+  <button type="button" id="a406">　</button>
+  <button type="button" id="a407">　</button>
+  <button type="button" id="a408">　</button>
+  <button type="button" id="a409">　</button>
+  <button type="button" id="a410">　</button>
+  <button type="button" id="a411">　</button>
+  <button type="button" id="a412">　</button>
+  <button type="button" id="a413">　</button>
+  <button type="button" id="a414">　</button>
+  <button type="button" id="a415">　</button>
+</p>
+<p id="l5">
+  <button type="button" id="a500">　</button>
+  <button type="button" id="a501">　</button>
+  <button type="button" id="a502">　</button>
+  <button type="button" id="a503">　</button>
+  <button type="button" id="a504">　</button>
+  <button type="button" id="a505">　</button>
+  <button type="button" id="a506">　</button>
+  <button type="button" id="a507">　</button>
+  <button type="button" id="a508">　</button>
+  <button type="button" id="a509">　</button>
+  <button type="button" id="a510">　</button>
+  <button type="button" id="a511">　</button>
+  <button type="button" id="a512">　</button>
+  <button type="button" id="a513">　</button>
+  <button type="button" id="a514">　</button>
+  <button type="button" id="a515">　</button>
+</p>
+<p id="l6">
+  <button type="button" id="a600">　</button>
+  <button type="button" id="a601">　</button>
+  <button type="button" id="a602">　</button>
+  <button type="button" id="a603">　</button>
+  <button type="button" id="a604">　</button>
+  <button type="button" id="a605">　</button>
+  <button type="button" id="a606">　</button>
+  <button type="button" id="a607">　</button>
+  <button type="button" id="a608">　</button>
+  <button type="button" id="a609">　</button>
+  <button type="button" id="a610">　</button>
+  <button type="button" id="a611">　</button>
+  <button type="button" id="a612">　</button>
+  <button type="button" id="a613">　</button>
+  <button type="button" id="a614">　</button>
+  <button type="button" id="a615">　</button>
+</p>
+<p id="l7">
+  <button type="button" id="a700">　</button>
+  <button type="button" id="a701">　</button>
+  <button type="button" id="a702">　</button>
+  <button type="button" id="a703">　</button>
+  <button type="button" id="a704">　</button>
+  <button type="button" id="a705">　</button>
+  <button type="button" id="a706">　</button>
+  <button type="button" id="a707">　</button>
+  <button type="button" id="a708">　</button>
+  <button type="button" id="a709">　</button>
+  <button type="button" id="a710">　</button>
+  <button type="button" id="a711">　</button>
+  <button type="button" id="a712">　</button>
+  <button type="button" id="a713">　</button>
+  <button type="button" id="a714">　</button>
+  <button type="button" id="a715">　</button>
+</p>
+<p id="l8">
+  <button type="button" id="a800">　</button>
+  <button type="button" id="a801">　</button>
+  <button type="button" id="a802">　</button>
+  <button type="button" id="a803">　</button>
+  <button type="button" id="a804">　</button>
+  <button type="button" id="a805">　</button>
+  <button type="button" id="a806">　</button>
+  <button type="button" id="a807">　</button>
+  <button type="button" id="a808">　</button>
+  <button type="button" id="a809">　</button>
+  <button type="button" id="a810">　</button>
+  <button type="button" id="a811">　</button>
+  <button type="button" id="a812">　</button>
+  <button type="button" id="a813">　</button>
+  <button type="button" id="a814">　</button>
+  <button type="button" id="a815">　</button>
+</p>
+<p id="l9">
+  <button type="button" id="a900">　</button>
+  <button type="button" id="a901">　</button>
+  <button type="button" id="a902">　</button>
+  <button type="button" id="a903">　</button>
+  <button type="button" id="a904">　</button>
+  <button type="button" id="a905">　</button>
+  <button type="button" id="a906">　</button>
+  <button type="button" id="a907">　</button>
+  <button type="button" id="a908">　</button>
+  <button type="button" id="a909">　</button>
+  <button type="button" id="a910">　</button>
+  <button type="button" id="a911">　</button>
+  <button type="button" id="a912">　</button>
+  <button type="button" id="a913">　</button>
+  <button type="button" id="a914">　</button>
+  <button type="button" id="a915">　</button>
+</p>
+<p id="anstext"><font size="5"></font></p>
+<p id="infotext"><font size="3"></font></p>
+<p id="infotext2"><font size="3"></font></p>
+<p>
+  <button type="button" id="b0" onclick="okClick()">OK</button>
+  <button type="button" id="b1" onclick="textBack()">1文字戻る</button>
+</p>
+<p>
+  <button type="button" id="p0" onclick="buttonClick(0)">あ</button>
+  <button type="button" id="p5" onclick="buttonClick(5)">か</button>
+  <button type="button" id="p10" onclick="buttonClick(10)">さ</button>
+  <button type="button" id="p15" onclick="buttonClick(15)">た</button>
+  <button type="button" id="p20" onclick="buttonClick(20)">な</button>
+  <button type="button" id="p25" onclick="buttonClick(25)">は</button>
+  <button type="button" id="p30" onclick="buttonClick(30)">ま</button>
+  <button type="button" id="p35" onclick="buttonClick(35)">や</button>
+  <button type="button" id="p38" onclick="buttonClick(38)">ら</button>
+  <button type="button" id="p43" onclick="buttonClick(43)">わ</button><br>
+
+  <button type="button" id="p1" onclick="buttonClick(1)">い</button>
+  <button type="button" id="p6" onclick="buttonClick(6)">き</button>
+  <button type="button" id="p11" onclick="buttonClick(11)">し</button>
+  <button type="button" id="p16" onclick="buttonClick(16)">ち</button>
+  <button type="button" id="p21" onclick="buttonClick(21)">に</button>
+  <button type="button" id="p26" onclick="buttonClick(26)">ひ</button>
+  <button type="button" id="p31" onclick="buttonClick(31)">み</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p39" onclick="buttonClick(39)">り</button><br>
+
+  <button type="button" id="p2" onclick="buttonClick(2)">う</button>
+  <button type="button" id="p7" onclick="buttonClick(7)">く</button>
+  <button type="button" id="p12" onclick="buttonClick(12)">す</button>
+  <button type="button" id="p17" onclick="buttonClick(17)">つ</button>
+  <button type="button" id="p22" onclick="buttonClick(22)">ぬ</button>
+  <button type="button" id="p27" onclick="buttonClick(27)">ふ</button>
+  <button type="button" id="p32" onclick="buttonClick(32)">む</button>
+  <button type="button" id="p36" onclick="buttonClick(36)">ゆ</button>
+  <button type="button" id="p40" onclick="buttonClick(40)">る</button>
+  <button type="button" id="p44" onclick="buttonClick(44)">を</button><br>
+
+  <button type="button" id="p3" onclick="buttonClick(3)">え</button>
+  <button type="button" id="p8" onclick="buttonClick(8)">け</button>
+  <button type="button" id="p13" onclick="buttonClick(13)">せ</button>
+  <button type="button" id="p18" onclick="buttonClick(18)">て</button>
+  <button type="button" id="p23" onclick="buttonClick(23)">ね</button>
+  <button type="button" id="p28" onclick="buttonClick(28)">へ</button>
+  <button type="button" id="p33" onclick="buttonClick(33)">め</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p41" onclick="buttonClick(41)">れ</button><br>
+
+  <button type="button" id="p4" onclick="buttonClick(4)">お</button>
+  <button type="button" id="p9" onclick="buttonClick(9)">こ</button>
+  <button type="button" id="p14" onclick="buttonClick(14)">そ</button>
+  <button type="button" id="p19" onclick="buttonClick(19)">と</button>
+  <button type="button" id="p24" onclick="buttonClick(24)">の</button>
+  <button type="button" id="p29" onclick="buttonClick(29)">ほ</button>
+  <button type="button" id="p34" onclick="buttonClick(34)">も</button>
+  <button type="button" id="p37" onclick="buttonClick(37)">よ</button>
+  <button type="button" id="p42" onclick="buttonClick(42)">ろ</button>
+  <button type="button" id="p45" onclick="buttonClick(45)">ん</button>
+</p>
+<p>
+  <button type="button" id="p46" onclick="buttonClick(46)">ぁ</button>
+  <button type="button" id="p51" onclick="buttonClick(51)">が</button>
+  <button type="button" id="p56" onclick="buttonClick(56)">ざ</button>
+  <button type="button" id="p61" onclick="buttonClick(61)">だ</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p66" onclick="buttonClick(66)">ば</button>
+  <button type="button" id="p71" onclick="buttonClick(71)">ぱ</button>
+  <button type="button" id="p76" onclick="buttonClick(76)">ゃ</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p79" onclick="buttonClick(79)">ゎ</button><br>
+
+  <button type="button" id="p47" onclick="buttonClick(47)">ぃ</button>
+  <button type="button" id="p52" onclick="buttonClick(52)">ぎ</button>
+  <button type="button" id="p57" onclick="buttonClick(57)">じ</button>
+  <button type="button" id="p62" onclick="buttonClick(62)">ぢ</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p67" onclick="buttonClick(67)">び</button>
+  <button type="button" id="p72" onclick="buttonClick(72)">ぴ</button><br>
+
+  <button type="button" id="p48" onclick="buttonClick(48)">ぅ</button>
+  <button type="button" id="p53" onclick="buttonClick(53)">ぐ</button>
+  <button type="button" id="p58" onclick="buttonClick(58)">ず</button>
+  <button type="button" id="p63" onclick="buttonClick(63)">づ</button>
+  <button type="button" id="p82" onclick="buttonClick(82)">っ</button>
+  <button type="button" id="p68" onclick="buttonClick(68)">ぶ</button>
+  <button type="button" id="p73" onclick="buttonClick(73)">ぷ</button>
+  <button type="button" id="p77" onclick="buttonClick(77)">ゅ</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p80" onclick="buttonClick(80)">ゔ</button><br>
+
+  <button type="button" id="p49" onclick="buttonClick(49)">ぇ</button>
+  <button type="button" id="p54" onclick="buttonClick(54)">げ</button>
+  <button type="button" id="p59" onclick="buttonClick(59)">ぜ</button>
+  <button type="button" id="p64" onclick="buttonClick(64)">で</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p69" onclick="buttonClick(69)">べ</button>
+  <button type="button" id="p74" onclick="buttonClick(74)">ぺ</button><br>
+
+  <button type="button" id="p50" onclick="buttonClick(50)">ぉ</button>
+  <button type="button" id="p55" onclick="buttonClick(55)">ご</button>
+  <button type="button" id="p60" onclick="buttonClick(60)">ぞ</button>
+  <button type="button" id="p65" onclick="buttonClick(65)">ど</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p70" onclick="buttonClick(70)">ぼ</button>
+  <button type="button" id="p75" onclick="buttonClick(75)">ぽ</button>
+  <button type="button" id="p78" onclick="buttonClick(78)">ょ</button>
+  <button type="button" class="btn-white">　</button>
+  <button type="button" id="p81" onclick="buttonClick(81)">ー</button><br>
+</p>
+
 <p id="wrongtext">　</p>
-<p id="lefttext">　</p>
-<p>既に答えた曲名↓</p>
 <font size="1"><div class="box">
   <p id="ansedtext"></p>
 </div></font>
 
 <script>
-let nameText = document.getElementById('nameText');
-nameText.value = '';
-let ansedtext = document.getElementById('ansedtext');
 
-let checkButton = document.getElementById('checkButton');
-checkButton.addEventListener('click', buttonClick);
+var limit=16;
 
-nameText.addEventListener('keypress', onenter);
+//let ansedtext = document.getElementById('ansedtext');
 
-function onenter(e) {
-  	if (e.keyCode === 13) {
-		buttonClick();
-	}  
-		return false;
+//let checkButton = document.getElementById('checkButton');
+//checkButton.addEventListener('click', buttonClick);
+
+
+var hiragana=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と",
+"な","に","ね","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ",
+"わ","を","ん","ぁ","ぃ","ぅ","ぇ","ぉ","が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","ぢ","づ","で","ど",
+"ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ゃ","ゅ","ょ","ゎ","ゔ","ー","っ"]
+var dict={}
+for (let i=0;i<hiragana.length;i++){
+    dict[hiragana[i]]=i;
+}
+//var songlistN=["あのね、聞いてほしいことがあるんだ","おまじない","僕らだけの未来の空","きみがくれた言葉があるから"]
+//var songlistH=["あのねきいてほしいことがあるんだ","おまじない","ぼくらだけのみらいのそら","きみがくれたことばがあるから"]
+//var infolist=["1","3","5","7"]
+
+var songlistN=[];
+var songlistH=[];
+var infolist=[];
+
+fetch('songdata_JP.txt')
+  .then(function (response) {
+     return response.text();
+  })
+  .then(function (mass) {
+    var datas=mass.split("\n")
+    var j=0;
+    for (let i=0;i<datas.length;i++){
+      if (i%3==0){
+        songlistN.push(datas[i])
+      }else if(i%3==1){
+        songlistH.push(datas[i])
+      }else{
+        infolist.push(datas[i])
+      }
+    }
+    wrongtext.innerText=String(datas.length)+"データ"
+  });
+
+
+
+//fr=new FileReader();
+
+
+var ingame=false;
+var stage=0;
+var stagelimit=10;
+var kaitoutext="";
+var leftsong=songlistN.length;
+
+var ansnumber=0;
+var anshiragana=songlistH[ansnumber];
+
+var colorlist=[]
+for (let i=0;i<hiragana.length;i++){
+    colorlist.push(0);
+  }
+
+var color_green="#00c000"
+var color_yellow="#c0c000"
+var color_black="#101010"
+var color_basic="#888888"
+
+var obj=document.getElementById("b0");
+obj.style.backgroundColor="#3030a0";
+var obj=document.getElementById("b1");
+obj.style.backgroundColor="#800000";
+var obj=document.getElementById("g0");
+obj.style.backgroundColor="#900090";
+
+for (let i=0;i<stagelimit;i++){
+    var obj=document.getElementById("l"+String(i));
+    obj.style.display="none";
+  }
+
+var obj=document.getElementById("anstext");
+obj.style.display="none";
+var obj=document.getElementById("infotext");
+obj.style.display="none";
+var obj=document.getElementById("infotext2");
+obj.style.display="none";
+
+var obj=document.getElementById("songdata");
+obj.style.display="none";
+
+function startClick(){
+  ingame=true;
+  var obj=document.getElementById("l0");
+  obj.style.display="block";
+  for (let i=1;i<stagelimit;i++){
+  var obj=document.getElementById("l"+String(i));
+  obj.style.display="none";
+  }
+  var obj=document.getElementById("g");
+  obj.style.display="none";
+  var obj=document.getElementById("anstext");
+  obj.style.display="none";
+  var obj=document.getElementById("infotext");
+  obj.style.display="none";
+
+  kaitoutext=""
+  wrongtext.innerText="";
+
+  for (let i=0;i<stagelimit;i++){
+  for (let j=0;j<limit;j++){
+    var buttoncode=(i*100)+j;
+    var obj=document.getElementById("a"+String(buttoncode));
+    obj.style.backgroundColor=color_basic;
+    obj.textContent="　";
+  }}
+  for (let j=0;j<hiragana.length;j++){
+    var obj=document.getElementById("p"+String(j));
+    obj.style.backgroundColor=color_basic;
+  }
+
+  ansnumber=1; //chusen
+  anshiragana=songlistH[ansnumber];
+
 }
 
-var songlist=["勇気のfragrance",
-"ピカリピックアップ！",
-"Plus 1 Good Day!",
-"アイシテの呪縛～Je vous aime～",
-"愛の旋律",
-"EVER RISING",
-"堕ちる果実",
-"かぼちゃ姫",
-"Secret Mirage",
-"星環世界",
-"デレパにパニック",
-"Drastic Melody",
-"夏のBang!!",
-"1st Call",
-"Let's Sail Away!!!",
-"レッド・ソール",
-"深紅のパシオン",
-"Paradox of LOVE",
-"We're the one",
-"Not Alone",
-"SESSION!",
-"EVERLASTING",
-"君に映るポートレイト",
-"パ・リ・ラ",
-"日々あどべんちゃーなのでしてー",
-"OH MY GOD",
-"Fly and Fly",
-"シークレットジュエル～魅惑の金剛石～",
-"Stories",
-"ダイヤモンド・クラリティ",
-"DIAMOND JOKER",
-"真夏のダイヤ☆",
-"ワールド・アスレチック・COOK-KING～勝者必食!?スポ食の秋～",
-"今しかない瞬間を",
-"Home Sweet Home",
-"僕らだけの未来の空",
-"GR@TITUDE",
-"あたためますか？",
-"アロー彗星",
-"K・A・W・A・I・I of the WORLD!",
-"Growing Smiles!",
-"Purple Sky",
-"HAPPY♪STEPPING!!DREAMING☆",
-"ずるじゃん",
-"Hungry Bambi",
-"Another Rampage",
-"Timeless Shooting Star",
-"カーテシーフラワー",
-"聖ミリオン女学園校歌",
-"花びらメモリーズ",
-"パステルカラー パスカラカラー",
-"ラブ・ボナペティート",
-"VOY@GER",
-"EVERYDAY STARS!!",
-"Just Us Justice",
-"Harmony 4 You",
-"POPLINKS TUNE!!!!!",
-"クライマックスアイランド",
-"拝啓タイムカプセル",
-"ABSOLUTE RUN!!!",
-"Be proud",
-"Coming Smile",
-"セクシータイフーン",
-"ソナー",
-"芽吹の季",
-"abyss of conflict",
-"革命進化論",
-"ウェイ・ダ・アイドル",
-"フリースタイル・トップアイドル！",
-"14平米にスーベニア",
-"スマイルシンフォニア",
-"Beat of the Night",
-"PRISISM",
-"#HE4DSHOT",
-"ひまわりマークをさがせ！",
-"EVIL LIVE",
-"パンとフィルム",
-"ReTale",
-"Color Days",
-"Resonance⁺",
-"Wish you Happiness!!",
-"泡沫のアイオーン",
-"装―So Beautiful―",
-"Happy's Birthday",
-"Hope's Journey",
-"満願成就♪巫女の神頼み！",
-"Milky Mode",
-"Life is HaRMONY",
-"あおぞらサイダー",
-"SOS",
-"過純性ブリーチ",
-"statice",
-"千夜アリア",
-"SOLAR WAY",
-"Darling you!",
-"Damascus Cocktail",
-"HAREBARE!!",
-"GOOD NEW MORNING",
-"Great Journey",
-"リビングアイズヒーロー",
-"フシギトラベラー",
-"Black★Party",
-"Going my way",
-"スローモーション",
-"雪・月・風・花",
-"誰ソ彼アイデンティティー",
-"常咲の庭",
-"プラスチック・アンブレラ",
-"また明日",
-"リフレクトサイン",
-"わたしの主人公はわたしだから！",
-"灯",
-"アプデ",
-"VELVET QUIET",
-"YELL OF DELIGHT",
-"思い出じゃない今日を",
-"君のステージ衣装、本当は…",
-"THE VILLAIN'S NIGHT",
-"初夢をあなたと",
-"FOCUS ON YOUR LIFE",
-"プライスレス ドーナッCyu♡",
-"Arrive You～それが運命でも～",
-"ライラックにつつまれて",
-"アポイント・シグナル",
-"ありったけの輝きで",
-"Sweet Memories",
-"チョコデート・サンデー",
-"ハナマルバッジ",
-"プラニスフィア～planisphere～",
-"星をめざして",
-"夢見鳥",
-"Attacca Scenery",
-"Smiles In Wonderland!",
-"Special Wonderful Smile",
-"旅立ちのコンパス",
-"オレンジタイム",
-"Anniversary",
-"ダブル・イフェクト",
-"アライアンス・スターダスト",
-"喜怒哀楽万国共通―Burn it up!―",
-"Secret Ornament",
-"Shine My Way",
-"Never ends",
-"Brand new!",
-"絶対的Performer",
-"My Evolution",
-"五ツ座流星群",
-"学祭革命夜明け前",
-"Ever Sunny",
-"オヤマトペ♪",
-"Shinobi 4.0 忍者のすゝめ",
-"ダイアモンド・アテンション",
-"弾丸サバイバー",
-"HUG",
-"ヒーローヴァーサスレイナンジョー",
-"ポジティブシンカー！",
-"純白トロイメライ",
-"Delicious Delivery",
-"Black Reverie",
-"Radiant Letter",
-"Deep, Deep Blue",
-"VIVA☆アクアリズム",
-"Joker",
-"Braver Beat",
-"Twinkle way",
-"Happy Funny Lucky",
-"太陽の絵の具箱",
-"NEXT STAGE!",
-"Hungry?",
-"わんだー×まーちんぐ！",
-"なんどでも笑おう",
-"Parade d'amour",
-"星宙のVoyage",
-"あの花のように",
-"いつだって僕らは",
-"Go Just Go!",
-"Glow Map",
-"さかしまの言葉",
-"Do the IDOL!!～断崖絶壁チュパカブラ～",
-"MUSIC JOURNEY",
-"Sing the Prologue♪",
-"世界滅亡 or KISS",
-"Destined Rival",
-"Hide & Attack",
-"春恋フレーム",
-"私色のプレリュード",
-"ほほえみDiary",
-"I'm yours",
-"Avenue Illusion!",
-"いつかのトライアングル",
-"運命光年",
-"New Me, Continued",
-"炎ノ鳥",
-"ピピカ・リリカ",
-"PROOF OF ONESELF",
-"マジで…!?",
-"クルリウタ",
-"絶対正義 EVERY DAY",
-"デビ太郎のうた",
-"オタク is LOVE!",
-"バベル",
-"Unlock Starbeat",
-"イケナイGO AHEAD",
-"Driving My Way",
-"O-Ku-Ri-Mo-No Sunday!",
-"あこがれステッチ",
-"ENDLESS TOUR",
-"輝け！ビートシューター",
-"あらかねの器",
-"OTAHEN アンセム",
-"Claw My Heart",
-"Gaze and Gaze",
-"SEASON IN THE FIVE",
-"祝彩！",
-"Singing Explorers",
-"mermaid fermata",
-"Fascinate",
-"シャイノグラフィ",
-"Dye the sky.",
-"Welcome to Japan!",
-"幸せの法則～ルール～",
-"Super Duper",
-"Hang In There!",
-"スリーブレス",
-"Needle Light",
-"Bet your intuition!",
-"Make New Legend",
-"√EVOLUTION",
-"百花は月下に散りぬるを",
-"矛盾の月",
-"Athanasia",
-"躍るFLAGSHIP",
-"義勇忍侠花吹雪",
-"Great Sympathy",
-"はんどめいど・きみはーと！",
-"Present For You!!!!!～A day in the café～",
-"ミュージアムジカ",
-"ミラーボール・ラブ",
-"SWEET♡STEP",
-"ギュっとMilky Way",
-"Your Nobility",
-"DEpArture from THe life",
-"Fermata in Rapsodia",
-"ASTERISK",
-"Waving FLAGS",
-"オモイノウタ",
-"Sun!High!Gold!",
-"Fine Day! Find Way!",
-"夢をのぞいたら",
-"Palette",
-"Secret Daybreak",
-"Cherry Colored Love",
-"夜と、明かりと。",
-"FUTURITY SMILE",
-"PRIDE STAR",
-"Sunshine See May",
-"Blessing",
-"もくろみインディアNight",
-"World Changer",
-"オウムアムアに幸運を",
-"Gossip Club",
-"印象",
-"comic cosmic",
-"ステップ＆スキップ",
-"不埒なCANVAS",
-"無重力シャトル",
-"Girl meets Wonder",
-"ALL nOR NOTHING",
-"Starry-Go-Round",
-"TRUE COLORS",
-"My pen light, SMILE",
-"Dreamy Dream",
-"ラビットファー",
-"アンデッド・ダンスロック",
-"サニードロップ",
-"Transcending The World",
-"Wandering Dream Chaser",
-"囚われのTeaTime",
-"dans l'obscurité",
-"Bloomy!",
-"Love Addiction",
-"ヒカリ→シンコキュウ→ミライ",
-"Pretty Liar",
-"眠らぬ夜にスパシーバ！",
-"Justice OR Voice",
-"Flyers!!!",
-"White Vows",
-"おねえちゃんデスコ",
-"ガールズ・イン・ザ・フロンティア",
-"ビーチブレイバー",
-"よりみちサンセット",
-"Clover Days",
-"LEADER!!",
-"愛の讃歌",
-"クレイジークレイジー",
-"TAKAMARI☆CLIMAXXX!!!!!",
-"NEO THEORY FANTASY",
-"ラビリンス・レジスタンス",
-"Sugaring Off Party!",
-"ギブミーメタファー",
-"Max Beat",
-"しゅがーはぁと☆レボリューション",
-"谷の底で咲く花は",
-"もりのくにから",
-"DREAM JOURNEY",
-"LIVE in your SMILE",
-"We can go now!",
-"トライアングル",
-"凸凹スピードスター",
-"反逆的同一性―Rebellion Identity―",
-"Episode. Tiara",
-"Get lol! Get lol! SONG",
-"ピコピコIIKO!インベーダー",
-"きゅん・きゅん・まっくす",
-"Ambitious Eve",
-"いつかShiny Days",
-"Purely&Kindly",
-"I did+I will",
-"月曜日のクリームソーダ",
-"to you for me",
-"Vast world",
-"LOVE☆ハズカム",
-"だってあなたはプリンセス",
-"ミラージュ・ミラー",
-"美に入り彩を穿つ",
-"夢幻ノ救憐唱～堕チル星ノ調ベ～",
-"光跡",
-"Hallo, Freunde!",
-"彼氏になってよ。",
-"ハルマチ女子",
-"Happy New Yeah!",
-"ヒトトキトキメキ",
-"ハーモニクス",
-"餞の鳥",
-"SNOW FLAKES MEMORIES",
-"POKER FAITH―ポーカーフェイス―",
-"Let's get a chance",
-"Trinity Field",
-"ALOHA! HAPPY CREATOR!",
-"Friendly Smile",
-"ラスト・アクトレス",
-"Twin☆くるっ★テール",
-"花のことば",
-"LET'S GO!!",
-"君への詩",
-"Trust me",
-"オーディナリィ・クローバー",
-"双翼の独奏歌",
-"ハピガ！",
-"さよならアロハ",
-"Dreaming Star",
-"アルストロメリア",
-"千客万来ニーハオサァカス！",
-"ハピリリ",
-"ビッグバンズバリボー!!!!!",
-"Kawaii make MY day!",
-"Dear My Dreamers",
-"スパイスパラダイス",
-"なつっこ音頭",
-"太陽キッス",
-"夢咲きAfter school",
-"UNION!!",
-"アツアツ♪マカロニグラタン",
-"Private Sign",
-"リトルリドル",
-"いとしーさー♥",
-"Baile Apasionado",
-"幻惑SILHOUETTE",
-"でれぱ音頭",
-"バベルシティ・グレイス",
-"咲くは浮世の君花火",
-"BORN ON DREAM!～HANABI☆NIGHT～",
-"With Love",
-"銀河図書館",
-"Stage Bye Stage",
-"虹になれ",
-"ヒカリのdestination",
-"315 Steelo!",
-"RED ZONE",
-"if",
-"踊りまくろ☆ダンシング・ナイト",
-"モーレツ★世直しギルティ！",
-"shy→shining",
-"トレジャー・パーティー！",
-"Spread the Wings!!",
-"Multicolored Sky",
-"花ざかりWeekend✿",
-"I.D～EScape from Utopia～",
-"ドレミファクトリー！",
-"Melty Fantasia",
-"Nothing but You",
-"PROUST EFFECT",
-"みなぎれ！ボボボンバー",
-"永遠なる四銃士",
-"MEET THE WORLD!",
-"嗚呼、情熱に星は輝く～315プロダクション社歌～",
-"ZETTAI×BREAK!!トゥインクルリズム",
-"Tomorrow Program",
-"∀NSWER",
-"咲きませ!!乙女塾",
-"そしてぼくらは旅にでる",
-"Dreaming of you",
-"Voyage",
-"桜の風",
-"Spring Screaming",
-"HARURUNRUN",
-"未完成の歴史",
-"おんなの道は星の道",
-"Sister",
-"シャクネツのパレード",
-"シルエット",
-"空に手が触れる場所",
-"楽園",
-"Last Kiss",
-"想い出はクリアスカイ",
-"虹色letters",
-"笑顔の祭りにゃ、福来る",
-"桜彩",
-"RIGHT WAY, SOUL MATE",
-"RAY OF LIGHT",
-"恋するTwist & Shout",
-"桜の頃",
-"星彩ステッパー",
-"フレデリカ、猫やめるよ",
-"炎の華",
-"イリュージョニスタ！",
-"教えてlast note…",
-"スノウレター",
-"Take!3.2.1.→S・P・A・C・E↑↑",
-"ときどきシーソー",
-"Hearty!!",
-"Everlasting",
-"昏き星、遠い月",
-"Secret! Playful! Drive!",
-"Compass Gripper!!!",
-"Swing Your Leaves",
-"伝えたいのはこんなきもち",
-"♡Cupids!",
-"inferno SQUARING",
-"WE ARE ONE!!",
-"Oli Oli DISCO",
-"スタートリップ",
-"Vertex Meister",
-"Home is a coming now!",
-"ムーンゴールド",
-"GLORIOUS RO@D",
-"Princess Be Ambitious!!",
-"いつかこの瞬間に名前をつけるなら",
-"ARRIVE TO STAR",
-"Eternal Fantasia",
-"Over AGAIN",
-"Sunset★Colors",
-"Symphonic Brave",
-"Tone's Destiny",
-"Reversed Masquerade",
-"Silent Joker",
-"Snow*Love",
-"たんけんぼうけん☆ハイホー隊",
-"はなしらべ",
-"ふわりずむ",
-"Border LINE→→→♡",
-"Angelic Parade♪",
-"冬の日のエトランゼ",
-"너 때문에",
-"ToP!!!!!!!!!!!!!",
-"虹のデスティネーション",
-"始めのDon't worry",
-"Blooming Star",
-"LEMONADE",
-"AFTER THE RAIN",
-"always",
-"恋が咲く季節",
-"ツインテールの風",
-"TOMORROW DIAMOND",
-"冬空プレシャス",
-"Frost",
-"From Teacher To Future!",
-"White Again",
-"ART NEEDS HEART BEATS",
-"AIKANE?",
-"秋めいて Ding Dong Dang!",
-"あめにうたおう♪",
-"ENTER→PLEASURE",
-"スポーツ！スポーツ！スポーツ！",
-"THIS IS IT!",
-"PRECIOUS TONE",
-"魔法のステアー",
-"“W”orldwide Ambitions!",
-"ワンホール＝ワンダーランド！",
-"DIVE to GRAVITATION",
-"FairyTaleじゃいられない",
-"夏時間グラフィティ",
-"Reason!!",
-"流星PARADE",
-"サイキック！ぱーりーないと☆",
-"情熱ファンファンファーレ",
-"Virgin Love",
-"Blooming Days",
-"NOT END…BUT AND!",
-"Let's Get Started",
-"Only One Second",
-"Come on a Tea Party!",
-"SING MY SONG",
-"To…",
-"満腹至極フルコォス",
-"秋風に手を振って",        
-"空想探査計画",
-"さよならアンドロメダ",    
-"Genuine feelings",        
-"Cherish BOUQUET",
-"ハートフル・パトローラー",
-"HANAMARU LIFE",
-"Halloween♥Code",
-"Funny Logic",
-"ブルウ・スタア",
-"Learning Message",
-"Light Year Song",
-"CAT CROSSING",
-"ハミングバード",
-"プリンセス・アラモード",
-"HOME RUN SONG♪",
-"ロケットスター☆",
-"Sweet Witches' Night～６人目はだぁれ～",
-"わたぐも",
-"A CUP OF HAPPINESS",
-"…掲げよう、偽りなき自分を。",
-"その場所へ行くために―KEEP ON FIGHTING―",
-"ナツゾラRecords",
-"BACK FLIP☆EMOTION",
-"Genesis Contact",
-"祈りの羽根",
-"地球儀にない国",
-"未来系ドリーマー",
-"瑠璃色金魚と花菖蒲",
-"ローリング△さんかく",
-"CRIMSON LOVERS",
-"聖炎の女神",
-"BRAVE STAR",
-"Wanna Be Your Star",
-"命燃やして恋せよ乙女",
-"漢一貫ロックン・ロール",
-"銀のイルカと熱い風",
-"GO AHEAD SMILE!",
-"CoCo夏夏夏 Holiday",
-"青春！サティスファクション",
-"とんでいっちゃいたいの",
-"夏恋―NATSU KOI―",
-"HAPPY×HAPPYミーティング",
-"Flowing Freedom",
-"マイ・スイート・ハネムーン",
-"ROAD TO THE FUTURE",
-"PINGPONG GAME",
-"インヴィンシブル・ジャスティス",
-"Brand New Theater!",
-"Attention",
-"Super Girl Magic",
-"메모리즈 Memories",
-"Lost in the Summer",
-"威風堂々と",
-"きらりんロボのテーマ",
-"SUN♡FLOWER",
-"Sweep Your Gloom",
-"ほっぷ・すてっぷ・ハイ、しーぷ！",
-"RULE～牙ヲ穿テヨ～",
-"“W”onderful Tactics!",
-"あんきら!?狂騒曲",
-"Neo Beautiful Pain",
-"エチュードは１曲だけ",
-"キラッ！満開スマイル",
-"Sanctuary World",
-"流るゝ風の如く～和敬清寂～",
-"Because",
-"ぴにゃこら太絵かき歌",
-"フェイバリットに踊らせて",
-"ROMANTIC SHAKER",
-"Jet to the Future",
-"たくさん！",
-"ACACIA",
-"꿈을 Dream",
-"One for All",
-"紅白応援V",
-"Treasure☆",
-"祈りの花",
-"追い風Running",
-"One Life",
-"薄紅",
-"メルヘン∞メタモルフォーゼ！",
-"ラブレター",
-"永遠の花",
-"Sweet Sweet Soul",
-"Starry Melody",
-"メメント？モメント♪ルルルルル☆",
-"リフレインキス",
-"EVERMORE",
-"Undiscovered WORLD",
-"サイコーCOUNT UP!",
-"スローライフ・ファンタジー",
-"Piece Montee",
-"BEYOND THE STARLIGHT",
-"Beyond The Dream",
-"Frozen Tears",
-"ふわもこシフォンなゆめのなか♪",
-"約束はドリーミングフライト",
-"Yes! Party Time!!",
-"P.S I Love You",
-"プリムラ",
-"brave HARMONY",
-"待ちぼうけのLacrima",
-"Raise the FLAG",
-"Echoes My Note",
-"Happy-Go-Unlucky!",
-"羽ばたきのMy Soul",
-"ぴんとこな～蝶よ華よ～",
-"Flying Hawk",
-"君との明日を願うから",
-"ゲキテキ！ムテキ！恋したい！",
-"サマカニ!!",
-"サンリズム・オーケストラ♪",
-"cherry*merry*cherry",
-"にょわにょわーるど☆",
-"NO CURRY NO LIFE",
-"Bonnes! Bonnes!! Vacances!!!",
-"ランニング・ハイッ",
-"だから今夜きみと",
-"キミのそばでずっと",
-"GOLD～No.79～",
-"THE FIRST STAR",
-"新世代ワールド・ビッグスター！",
-"だいぶ・いんとぅ・にゅ～・わあるど！",
-"Take me☆Take you",
-"我が混沌のサバト・マリアージュ",
-"赤い世界が消える頃",
-"青空リレーション",
-"With…STORY",
-"うぇるかむ・はぴきらパーク！",
-"String of Fate",
-"PANDEMIC ALONE",
-"もっふ・いんざぼっくす♪",
-"夢色VOYAGER",
-"Love∞Destiny",
-"Legacy of Spirit",
-"アマテラス",
-"飛べない鳥は夜に鳴く",
-"俠気乱舞",
-"カレイド TOURHYTHM",
-"GLORIA MOMENT",
-"LEADING YOUR DREAM",
-"インセインゲーム",
-"僕たちのResistance",
-"創造は始まりの風を連れて",
-"DIAMOND DAYS",
-"エウレカダイアリー",
-"おかしな国のおかし屋さん",
-"サ・ヨ・ナ・ラ Summer Holiday",
-"純情Midnight伝説",
-"Fun! Fun! Festa!",
-"Bloody Festa",
-"SMOKY FRUITS",
-"Miracle Night",
-"ターンオンタイム！",
-"The 1st Movement～未来のための二重奏～",
-"情熱…FIGHTER",
-"Sparkling Girl",
-"生存本能ヴァルキュリア",
-"空と風と恋のワルツ",
-"強く尊き獣たち",
-"Never end 「Opus」",
-"ザ・ライブ革命でSHOW!",
-"Happy!",
-"OUR SONG―それは世界でひとつだけ―",
-"MOON NIGHTのせいにして",
-"夜空を煌めく星のように",
-"Flooding",
-"咲いてJewel",
-"SUPERLOVE☆",
-"NUDIE★",
-"ハイファイ☆デイズ",
-"きみにいっぱい☆",
-"アイ MUST GO!",
-"明日また会えるよね",
-"Near to You",
-"ステップ！",
-"Tulip",
-"ニャンと☆スペクタクル",
-"Advance",
-"でれぱれ～ど",
-"À La Carte FREEDOM♪",
-"オレたちの最強伝説～一世一代、破羅駄威棲！～",
-"Café Parade!",
-"バーニン・クールで輝いて",
-"AnemoneStar",
-"STORY",
-"Snow Wings",
-"はにかみdays",
-"Understand? Understand!",
-"Emergence Vibe",
-"ジャングル☆パーティー",
-"Dreamscape",
-"Beat the World!!",
-"共鳴世界の存在論",
-"恋色エナジー",
-"恋のHamburg♪",
-"lilac time",
-"Radio Happy",
-"Flip Flop",
-"アルティメットアイズ",
-"Destiny",
-"喝彩！～花鳥風月～",
-"たしかな足跡",
-"秘密のメモリーズ",
-"fruity love",
-"MISSION is ピースフル！",
-"”Your” HOME TOWN",
-"勇敢なるキミへ",
-"夜に輝く星座のように",
-"和風堂々！～WAnderful NIPPON!～",
-"アイル",
-"G♡F",
-"深層マーメイド",
-"HELLO, YOUR ANGEL♪",
-"Melody in scape",
-"little trip around the world",
-"Lunatic Show",
-"アライブファクター",
-"Cut. Cut. Cut.",
-"Smiling Crescent",
-"Decided",
-"Persona Voice",
-"M@GIC☆",
-"青の一番星",
-"in fact",
-"in WonderRadio",
-"Can't Stop!!",
-"秘密のトワレ",
-"ラヴィアンローズ",
-"心もよう",
-"トリプルAngel",
-"流れ星キセキ",
-"私だって女の子",
-"エスケープ",
-"Eternal Spiral",
-"成長Chu→LOVER!!",
-"ハルカナミライ",
-"piece of cake",
-"∞Possibilities",
-"Good-Byes",
-"コイ・ココロ",
-"Study Equal Magic!",
-"VICTORY BELIEVER",
-"プラ・ソニック・ラブ！",
-"Pleasure Forever…",
-"Trancing Pulse",
-"Nebula Sky",
-"この空の下",
-"Dreaming!",
-"Rockin' Emotion",
-"Wonder goes on!!",
-"あいくるしい",
-"Heart Voice",
-"夢色ハーモニー",
-"私色ギフト",
-"青空エール",
-"Shine!!",
-"とどけ！アイドル",
-"Absolute NIne",
-"つぼみ",
-"shabon song",
-"想いはETERNITY",
-"JOKER↗オールマイティ",
-"スマイル・エンゲージ",
-"HIGH JUMP NO LIMIT",
-"あの日のナミダ",
-"細氷",
-"静かな夜に願いを…",
-"放課後ジャンプ",
-"でれぱDEないと",
-"全力アイドル",
-"99 Nights",
-"Nostalgia",
-"ふたつの月",
-"GOIN'!!!",
-"Nocturne",
-"キミ＊チャンネル",
-"ステキハピネス",
-"絶険、あるいは逃げられぬ恋",
-"できたてEvo! Revo! Generation!",
-"Pon De Beach",
-"ØωØver!!",
-"STARLIGHT CELEBRATE!",
-"DRIVE A LIVE",
-"DRAMATIC NONFICTION",
-"Planet scape",
-"BRAND NEW FIELD",
-"LET'S GO HAPPY!!",
-"Happy×2 Days",
-"addicted",
-"―LEGNE―仇なす剣光の旋律",
-"恋の音色ライン",
-"STANDING ALIVE",
-"STEREOPHONIC ISOTONIC",
-"Day After “Yesterday”",
-"鳥籠スクリプチュア",
-"vivid color",
-"ファンタジスタ・カーニバル",
-"FAKE SELF×TRUE SELF",
-"星屑のシンフォニア",
-"WHY?",
-"夕風のメロディー",
-"Memories",
-"夕映えプレゼント",
-"Star!!",
-"き・ま・ぐ・れ☆Café au lait!",
-"気持ちいいよね 一等賞！",
-"Bright Blue",
-"Hotel Moonside",
-"みんなのきもち",
-"アニマル☆ステイション！",
-"Impervious Resolution",
-"WOW! I NEED!!～シンギングモンキー 歌唱拳～",
-"おまじない",
-"水中キャンディ",
-"SUPER SIZE LOVE!!",
-"月のほとりで",
-"ドリームトラベラー",
-"Birth of Color",
-"ユニゾン☆ビート",
-"りんごのマーチ",
-"WORLD WIDE DANCE!!!",
-"パステルピンクな恋",
-"絶対特権主張しますっ！",
-"オルゴールの小箱",
-"ゴキゲンParty Night",
-"Up!10sion♪Pleeeeeeeeease!",
-"キミがいて夢になる",
-"ジレるハートに火をつけて",
-"Super Lover",
-"BOUNCING♪ SMILE!",
-"初恋バタフライ",
-"フローズン・ワード",
-"HOME, SWEET FRIENDSHIP",
-"ホントウノワタシ",
-"MY STYLE! OUR STYLE!!!!",
-"求ム VS マイ・フューチャー",
-"恋愛ロードランナー",
-"IDOL POWER RAINBOW",
-"Monday Night Fever☆",
-"Eternal Harmony",
-"絵本",
-"カーニヴァル・ジャパネスク",
-"君だけの欠片",
-"Catch my dream",
-"サマ☆トリ～Summer trip～",
-"Just be myself!!",
-"Shooting Stars",
-"bitter sweet",
-"プラリネ",
-"プリティ～～～ッ→ニャンニャンッ！",
-"夢色トレイン",
-"アクセルレーション",
-"ONLY MY NOTE",
-"虹色ミラクル",
-"Fate of the World",
-"どっきり☆ハピバ",
-"LOOK THE SKY",
-"合言葉はスタートアップ！",
-"…In The Name Of。 …LOVE?",
-"We're the friends!",
-"Welcome!!",
-"空想文学少女",
-"Growing Storm!",
-"ストロベリー・キューピッド",
-"smiley days",
-"タイムマシンに飛び乗って！",
-"地球ミラーボウル",
-"チャンピオン",
-"VIVID イマジネーション",
-"Believe my change!",
-"Pu-Ru-Ru",
-"未来飛行",
-"メッセージ",
-"Liar's good bye",
-"しっくりとゆっくりと",
-"たいせつなひと",
-"Q&A",
-"前向きで行こう♪",
-"待ち受けプリンス",
-"ラムネ色 青春",
-"U・N・M・E・I ライブ",
-"月ノ桜",
-"天と海の島",
-"エピソードラブ",
-"オハヨ○サンシャイン",
-"カンゲキハッピーエコロジー",
-"グッナイ☆スターズ",
-"ハロー*ランチタイム",
-"1人ぼっちのうた",
-"2nd SIDE",
-"dear…",
-"毒茸伝説",
-"Heart♡・デイズ・Night☆",
-"薄荷―ハッカ―",
-"花簪 HANAKANZASHI",
-"ビギナーズ☆ストライク",
-"Bigバルーン◎",
-"微笑んだから、気づいたんだ。",
-"ミラクルテレパシー",
-"♪(おんぷ)",
-"IMPRESSION→LOCOMOTION!",
-"恋心マスカレード",
-"ココロがかえる場所",
-"デコレーション・ドリ～ミンッ♪",
-"ハミングロード",
-"想いはCarnaval",
-"Get My Shinin'",
-"DETECTIVE HIGH!～恋探偵物語～",
-"FLY TO EVERYWHERE",
-"Fu-Wa-Du-Wa",
-"君が選ぶ道",
-"恋花",
-"ココロ☆エクササイズ",
-"ハッピ～ エフェクト！",
-"瞳の中のシリウス",
-"フェスタ・イルミネーション",
-"M@STERPIECE",
-"あのね、聞いてほしいことがあるんだ",
-"GREEDY GIRL",
-"スマイルいちばん",
-"チョー↑元気Show☆アイドルch@ng!",
-"Helloコンチェルト",
-"Vault That Borderline!",
-"オリジナル声になって",
-"グッデイ・サンシャイン！",
-"Good-Sleep, Baby♡",
-"ハートウォーミング",
-"ホップ♪ステップ♪レインボウ♪",
-"edeN",
-"エヴリデイドリーム",
-"お散歩カメラ",
-"風色メロディ",
-"小さな恋の密室事件",
-"You're stars shine on me",
-"カワラナイモノ",
-"君想いBirthday",
-"ちいさな恋の足音",
-"嘆きのFRACTION",
-"マイペース☆マイウェイ",
-"ビジョナリー",
-"アタシポンコツアンドロイド",
-"Orange Sapphire",
-"恋のLesson初級編",
-"ススメ☆オトメ～jewel parade～",
-"追憶のサンドグラス",
-"Nation Blue",
-"FIND YOUR WIND!",
-"Marionetteは眠らない",
-"流星群",
-"MUSIC♪",
-"Sentimental Venus",
-"Be My Boy",
-"プライヴェイト・ロードショウ(playback, Weekday)",
-"POKER POKER",
-"微笑み日和",
-"輝く世界の魔法",
-"朝焼けのクレッシェンド",
-"アフタースクールパーリータイム",
-"SnowWhite",
-"Blue Symphony",
-"ライアー・ルージュ",
-"Mon Chéri",
-"れでぃお☆マジかる",
-"オレンジの空の下",
-"素敵なキセキ",
-"Happy Darling",
-"ハッピー☆ラッキー☆ジェットマシーン",
-"PRETTY DREAMER",
-"Rebellion",
-"キラメキ進行形",
-"透明なプロローグ",
-"トキメキの音符になって",
-"Precious Grain",
-"Maria Trap",
-"Legend Girls!!",
-"ヴィーナスシンドローム",
-"To my darling…",
-"熱血乙女A",
-"メルヘンデビュー！",
-"Romantic Now",
-"Thank You!",
-"お願い！シンデレラ",
-"Closet Fashion Lover",
-"ねがいひとつ",
-"しあわせのレシピ",
-"ロイヤルストレートフラッシュ",
-"zone of fortune",
-"ヨーイドン!!",
-"WEDDING BELL",
-"ドキッ♥ラブアトラクション",
-"あ・り・が・と・YESTERDAYS",
-"We Have A Dream",
-"カーテンコール",
-"幸",
-"SWITCH ON",
-"First Step",
-"まほろば",
-"アップルパイ・プリンセス",
-"Angel Breeze",
-"Twilight Sky",
-"Naked Romance",
-"ミツボシ☆☆★",
-"choco fondue",
-"TODAY with ME",
-"Princess Snow White",
-"Maybe TOMORROW",
-"きっと",
-"continue",
-"Strawberry pain",
-"ぜんぜんあいたい",
-"ら♪ら♪ら♪わんだぁらんど",
-"アエイウエオア！",
-"初恋～五章 永遠のクリスマス～",
-"Little Match Girl",
-"Catch me☆Get you!～バンプレストのうた～",
-"初恋～四章 運命のイヴ～",
-"Honey Heartbeat",
-"愛 LIKE ハンバーガー",
-"初恋～三章 幸せの紅葉～",
-"七彩ボタン",
-"初恋～二章 告白の花火～",
-"きゅんっ！ヴァンパイアガール",
-"初恋～一章 片想いの桜～",
-"おねだりShall We～？",
-"S(mile)ING!",
-"華蕾夢ミル狂詩曲～魂ノ導～",
-"TOKIMEKIエスカレート",
-"ましゅまろ☆キッス",
-"Slapp Happy!!!",
-"あんずのうた",
-"こいかぜ",
-"ショコラ・ティアラ",
-"DOKIDOKIリズム",
-"Never say never",
-"高速道路",
-"HEART AND SOUL",
-"君のままで",
-"さよならをありがとう",
-"Happy Christmas",
-"My Wish",
-"見つめて",
-"私たちはずっと…でしょう？",
-"コーヒー1杯のイマージュ",
-"チアリングレター",
-"Brand New Day!",
-"約束",
-"自分REST@RT",
-"マリオネットの心",
-"Alice or Guilty",
-"On Sunday",
-"結晶～Crystal Dust～",
-"恋をはじめよう",
-"BANG×BANG",
-"今 スタート！",
-"We just started",
-"CHANGE!!!!",
-"I'm so free!",
-"うれし・あやかし道中記",
-"旅の途中で",
-"飛べ！スカイキッド",
-"ハニカミ！ファーストバイト",
-"晴れ色",
-"It's ALRIGHT!",
-"Crescent Maze",
-"SUPERSTAR",
-"1,2,3",
-"神SUMMER!!",
-"MOONY",
-"おとなのはじまり",
-"おもいでのはじまり",
-"READY!!",
-"LOVEオーダーメイド",
-"ラ♥ブ♥リ♥",
-"DIAMOND",
-"YOU往MY進！",
-"Traveler",
-"恋するミカタ",
-"SMOKY THRILL",
-"チクタク",
-"The world is all one !!",
-"ぷちどるのうた",
-"ジェミー",
-"スマイル体操",
-"何度も言えるよ",
-"眠り姫",
-"風花",
-"tear",
-"START!!",
-"Day of the future",
-"TRIAL DANCE",
-"MEGARE!",
-"団結2010",
-"光",
-"LOST",
-"DREAM",
-"THE 愛",
-"AVALON",
-"SHADOWLESS",
-"DEAD or ALIVE",
-"はっぴぃ☆ほりっく",
-"One Step",
-"チェリー",
-"またね",
-"笑って！",
-"黒い犬",
-"J☆U☆M☆P",
-"白い犬",
-"ストレートラブ！",
-"仲良しでいようね♡",
-"Virgin Load",
-"Melted Snow",
-"Looking For Love",
-"あったかな雪",
-"キミはメロディ",
-"Large Size Party",
-"ALIVE",
-"はなまる",
-"Dazzling World",
-"ヒミツの珊瑚礁",
-"クロスワード",
-"プリコグ",
-"ハッピース",
-"“HELLO!!”",
-"ショッキングな彼",
-"リゾラ",
-"赤い花咲いた",
-"エール",
-"ギフト",
-"sunshine",
-"JM―Justify Myself―",
-"Smile Smile Smile",
-"7 colors",
-"てがみうた",
-"pinkのfebruary",
-"また、はじめよう。",
-"Melting season",
-"Lady☆Cake",
-"自転車",
-"Mythmaker",
-"ALRIGHT*",
-"フラワーガール",
-"arcadia",
-"Next Life",
-"僕はあなたに恋する",
-"livE",
-"黎明スターライン",
-"L・O・B・M",
-"乙女よ大志を抱け!!",
-"ゲンキトリッパー",
-"オーバーマスター",
-"Colorful Days",
-"KisS",
-"スキ",
-"シャララ",
-"花",
-"サニー",
-"乙女心盗んで！",
-"Fly High!",
-"inferno",
-"my song",
-"EXCAVATE",
-"ハリキリ★ラリー",
-"YES♪",
-"Do-Dai",
-"禁恋歌",
-"Tower of Adventure",
-"FO(U)R",
-"It's show",
-"アイレデッスカ!?",
-"あしたアイシテル",
-"Inspire",
-"Contradiction",
-"Shooting!!!",
-"Still Love",
-"強い女",
-"destiny",
-"春の日差し",
-"L<>R",
-"Labyrinth",
-"いっしょ",
-"shiny smile",
-"バレンタイン",
-"夏空のブローチ",
-"メリー",
-"ID:[OL]",
-"アナタのヒトコト",
-"空",
-"団結",
-"Kosmos, Cosmos",
-"いっぱいいっぱい",
-"隣に…",
-"フタリの記憶",
-"スタ→トスタ→",
-"目が逢う瞬間",
-"記憶の鎖",
-"残酷よ希望となれ",
-"ふるふるフューチャー☆",
-"迷走Mind",
-"i",
-"I Want",
-"キラメキラリ",
-"Okey-dokey",
-"声が聴こえる",
-"BEST ROAD",
-"Searching",
-"悠久の旅人～Dear boy",
-"微熱S.O.S!!",
-"ムーンライト・ラビリンス",
-"まっすぐ",
-"私はアイドル♡",
-"恋だもん～初級編～",
-"LIVE for LOVE!",
-"My Best Friend",
-"relations",
-"思い出をありがとう",
-"GO MY WAY!!",
-"神さまのBirthday",
-"URGENT!!!",
-"月下祭～la festa sotto la luna～",
-"STYLISH QUEEN★",
-"太陽と月",
-"夢見る頃",
-"蒼い鳥",
-"Here we go!!",
-"First Stage",
-"エージェント夜を往く",
-"おはよう!!朝ご飯",
-"太陽のジェラシー",
-"SHINING STAR★彡",
-"ポジティブ！",
-"9:02pm",
-"THE iDOLM@STER",
-"魔法をかけて！"]
+function buttonClick(e){
+  if (ingame==true){
+    //const data= e.currentTarget.dataset["index"];
+    var inichi = kaitoutext.length;
+    if (kaitoutext.length>=limit){
+      kaitoutext=kaitoutext.slice(0,-1);
+      inichi--;
+    }
+    kaitoutext=kaitoutext+hiragana[e];
+    wrongtext.innerText=kaitoutext;
 
-var answers=[]
-var leftsong=songlist.length;
-titletext.innerText="アイマス楽曲"+String(songlist.length)+"曲言えるかな？";
-lefttext.innerText="あと"+leftsong+"曲";
-var answeredlist = [];
-for (let i=0; i<songlist.length;i++){
-    answeredlist.push(0);}
+    var buttoncode=(stage*100)+inichi;
+    var obj=document.getElementById("a"+String(buttoncode));
+    //console.log(obj.textContent)
+    obj.textContent=hiragana[e]
+  }
+}
 
-function buttonClick(){
-
-  var ansYes = new Boolean(false);
-  var ansnom = 0;
-  var nowans=nameText.value;
-
-  for (let i=0; i<songlist.length;i++){
-    if (nowans==songlist[i]){
-        ansYes=true;
-        ansnom=i;
-        break;
-
+function okClick(){
+if (kaitoutext!="" && ingame==true){
+  var canuse=[];
+  var rel=[];
+  var seikai=true;
+  for (let i=0;i<hiragana.length;i++){
+    canuse.push(0);
+  }
+  for (let i=0;i<anshiragana.length;i++){
+    canuse[dict[anshiragana.charAt(i)]]++;
+  }
+  for (let i=0;i<limit;i++){
+    if (kaitoutext.length<=i){
+      if (anshiragana.length<=i){
+        rel.push(2);
+      }else{
+        seikai=false;
+        rel.push(-1);
+      }
+    }else{
+      if (anshiragana.length<=i){
+        seikai=false;
+        rel.push(0);
+      }else{
+        if (kaitoutext.charAt(i)==anshiragana.charAt(i)){
+          rel.push(2);
+          canuse[dict[kaitoutext.charAt(i)]]--;
+        }else{
+          seikai=false;
+          rel.push(0);
+        }
+      }
+    }
+  }
+  for (let i=0;i<limit;i++){
+    if (rel[i]==0){
+      if (canuse[dict[kaitoutext.charAt(i)]]>0){
+        canuse[dict[kaitoutext.charAt(i)]]--;
+        rel[i]=1
+      }
     }
   }
 
-  if (ansYes==false){
-    wrongtext.innerText="曲名が間違っています";
-  }else if(answeredlist[ansnom]==1){
-    wrongtext.innerText="その曲は既に答えています";
-  　}else{
-    wrongtext.innerText="　";
-    answeredlist[ansnom]=1
-  answers.push(nowans)
-  var anstext=""
-  for (let i=0; i<answers.length;i++){
-  anstext= anstext +answers[i]+" | ";
+  for (let i=0;i<limit;i++){
+    if (rel[i]>-2){
+      var buttoncode=(stage*100)+i;
+      var obj=document.getElementById("a"+String(buttoncode));
+      //Sconsole.log(obj.textContent)
+      if (rel[i]==2){
+        obj.style.backgroundColor=color_green;
+        colorlist[dict[kaitoutext.charAt(i)]]=2
+      }else if(rel[i]==1){
+        obj.style.backgroundColor=color_yellow;
+        if (colorlist[dict[kaitoutext.charAt(i)]]<1){
+          colorlist[dict[kaitoutext.charAt(i)]]=1
+        }
+      }else{
+        obj.style.backgroundColor=color_black;
+        if (colorlist[dict[kaitoutext.charAt(i)]]<1){
+          colorlist[dict[kaitoutext.charAt(i)]]=-1
+        }
+      }
+      
+    }
   }
-  ansedtext.innerText = anstext;
-  leftsong--;
-  lefttext.innerText="あと"+leftsong+"曲";
-  nameText.value = '';
+  for (let i=0;i<hiragana.length;i++){
+    if(colorlist[i]==2){
+      var obj=document.getElementById("p"+String(i));
+      obj.style.backgroundColor=color_green;
+    }else if(colorlist[i]==1){
+      var obj=document.getElementById("p"+String(i));
+      obj.style.backgroundColor=color_yellow;
+    }else if(colorlist[i]==-1){
+      var obj=document.getElementById("p"+String(i));
+      obj.style.backgroundColor=color_black;
+    }
   }
+
+  console.log(String(rel))
   
+  kaitoutext="";
+  if(stage+1<stagelimit && seikai==false){
+    stage++;
+    var obj=document.getElementById("l"+String(stage));
+    obj.style.display="block";
+  }else{
+    ingame=false;
+    var obj=document.getElementById("anstext");
+    obj.textContent="正解：「"+songlistN[ansnumber]+"」";
+    obj.style.display="block";
+    var obj=document.getElementById("infotext");
+    obj.textContent=songlistH[ansnumber];
+    obj.style.display="block";
+    var obj=document.getElementById("g");
+    obj.style.display="block";
+  }
+
+}
+
+}
+
+function textBack(){
   
+  if (kaitoutext.length>0 && ingame==true){
+      var inichi = kaitoutext.length-1;
+      kaitoutext=kaitoutext.slice(0,-1)
+      var buttoncode=(stage*100)+inichi;
+      var obj=document.getElementById("a"+String(buttoncode));
+      //Sconsole.log(obj.textContent)
+      obj.textContent="　"
+    }
+    wrongtext.innerText=kaitoutext;
 }
 
 
