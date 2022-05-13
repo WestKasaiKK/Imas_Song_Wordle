@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link href="style.css" rel="stylesheet">
 <link href="songdata_JP.txt" id="data">
-<title>test</title>
+<title>アイマス楽曲Wordle -Japanese Version-</title>
 </head>
 <body>
 <h1 class="title"> アイマス楽曲Wordle -Japanese Version-</h1>
@@ -344,7 +344,7 @@ fetch('songdata_JP.txt')
   .then(function (mass) {
     var datas=mass.split("\n")
     var j=0;
-    for (let i=0;i<datas.length;i=i+3){
+    for (let i=0;i+2<datas.length;i=i+3){
       d1=datas[i]
       d2=datas[i+1]
       d3=datas[i+2]
