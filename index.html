@@ -307,9 +307,6 @@
 <p id="wrongtext">　</p>
 <p><font size="1">※初めての方へ：本ゲームは作りかけです。遊ぶことはできますが色々と不便な点・融通の利かない点・誤っている点などがありますのでご了承ください。</font></p>
 <p><font size="1">【最終更新：メモリーブロッサム追加】</font></p>
-<font size="1"><div class="box">
-  <p id="ansedtext"></p>
-</div></font>
 
 <script>
 
@@ -329,14 +326,16 @@ var dict={}
 for (let i=0;i<hiragana.length;i++){
     dict[hiragana[i]]=i;
 }
-//var songlistN=["あのね、聞いてほしいことがあるんだ","おまじない","僕らだけの未来の空","きみがくれた言葉があるから"]
-//var songlistH=["あのねきいてほしいことがあるんだ","おまじない","ぼくらだけのみらいのそら","きみがくれたことばがあるから"]
-//var infolist=["1","3","5","7"]
 
+
+/*
+var songlistN=["あのね、聞いてほしいことがあるんだ","おまじない","僕らだけの未来の空","きみがくれた言葉があるから"]
+var songlistH=["あのねきいてほしいことがあるんだ","おまじない","ぼくらだけのみらいのそら","きみがくれたことばがあるから"]
+var infolist=["1","3","5","7"]
+*/
 var songlistN=[];
 var songlistH=[];
 var infolist=[];
-
 fetch('songdata_JP.txt')
   .then(function (response) {
      return response.text();
@@ -354,12 +353,9 @@ fetch('songdata_JP.txt')
         songlistH.push(d2)
         infolist.push(d3)
       }
-
-      
     }
-    wrongtext.innerText=String(datas.length)+"データ"
+    wrongtext.innerText="対象："+String(songlistH.length)+"曲"
   });
-
 
 
 //fr=new FileReader();
@@ -408,6 +404,7 @@ obj.style.display="none";
 
 function startClick(){
   ingame=true;
+  stage=0;
   var obj=document.getElementById("l0");
   obj.style.display="block";
   for (let i=1;i<stagelimit;i++){
