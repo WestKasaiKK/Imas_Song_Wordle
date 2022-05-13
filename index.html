@@ -435,6 +435,11 @@ function startClick(){
     obj.style.backgroundColor=color_basic;
   }
 
+  colorlist=[]
+  for (let i=0;i<hiragana.length;i++){
+    colorlist.push(0);
+  }
+
   ansnumber=Math.floor(Math.random()*(songlistH.length)); //chusen
   anshiragana=songlistH[ansnumber];
 
