@@ -348,19 +348,13 @@ fetch('songdata_JP.txt')
       d1=datas[i]
       d2=datas[i+1]
       d3=datas[i+2]
-      if (len(d2)<=limit){
+      if (d2.length<=limit){
         songlistN.push(d1)
         songlistH.push(d2)
         infolist.push(d3)
       }
 
-      if (i%3==0){
-        
-      }else if(i%3==1){
-        songlistH.push(datas[i])
-      }else{
-        infolist.push(datas[i])
-      }
+      
     }
     wrongtext.innerText=String(datas.length)+"データ"
   });
@@ -441,7 +435,7 @@ function startClick(){
     obj.style.backgroundColor=color_basic;
   }
 
-  ansnumber=1; //chusen
+  ansnumber=Math.floor(Math.random()*(songlistH.length)); //chusen
   anshiragana=songlistH[ansnumber];
 
 }
