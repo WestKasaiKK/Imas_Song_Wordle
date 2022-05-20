@@ -198,6 +198,9 @@
 <p>
   <button type="button" id="b0" onclick="okClick()">OK</button>
   <button type="button" id="b1" onclick="textBack()">1文字戻る</button>
+    <label>まとめて入力：<input type="text" id="nametext"></label>
+    <input type="button" value="Add" id="AddButton" onclick="addClick()">
+    
 </p>
 <p>
   <button type="button" id="p0" onclick="buttonClick(0)">あ</button>
@@ -306,7 +309,7 @@
 
 <p id="wrongtext">　</p>
 <p><font size="1">※初めての方へ：本ゲームは作りかけです。遊ぶことはできますが色々と不便な点・融通の利かない点・誤っている点などがありますのでご了承ください。</font></p>
-<p><font size="1">【最終更新：2022-05-20 パーフェクトゲーム、浮動性イノセンス追加】</font></p>
+<p><font size="1">【最終更新：2022-05 20 パーフェクトゲーム、浮動性イノセンスを追加】</font></p>
 
 <script>
 
@@ -322,6 +325,12 @@ var hiragana=["あ","い","う","え","お","か","き","く","け","こ","さ",
 "な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ",
 "わ","を","ん","ぁ","ぃ","ぅ","ぇ","ぉ","が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","ぢ","づ","で","ど",
 "ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ゃ","ゅ","ょ","ゎ","ゔ","ー","っ"]
+
+var subletters=["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト",
+"ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ",
+"ワ","ヲ","ン","ァ","ィ","ゥ","ェ","ォ","ガ","ギ","グ","ゲ","ゴ","ザ","ジ","ズ","ゼ","ゾ","ダ","ヂ","ヅ","デ","ド",
+"バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ","ャ","ュ","ョ","ヮ","ヴ","ー","ッ"]
+
 var dict={}
 for (let i=0;i<hiragana.length;i++){
     dict[hiragana[i]]=i;
@@ -461,6 +470,27 @@ function buttonClick(e){
     //console.log(obj.textContent)
     obj.textContent=hiragana[e]
   }
+}
+
+function addClick(){
+  var nametext=document.getElementById("nametext");
+  var inp=nametext.value;
+  
+  for (let i=0;i<inp.length;i++){
+    //console.log("ininin");
+    var l=inp.charAt(i);
+    var lin=false;
+    for (let j=0;j<hiragana.length;j++){
+      if ((l==hiragana[j] || l==subletters[j]) && kaitoutext.length<limit){
+        buttonClick(j);
+        lin=true;
+        break
+      }
+    }
+    
+
+  }
+  nametext.value="";
 }
 
 function okClick(){
